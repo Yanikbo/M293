@@ -1,0 +1,115 @@
+body {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+}
+
+nav {
+  background-color: brown;
+  margin: 0px;
+  padding-right: 20px;
+  color: white;
+}
+
+.nav-point {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+.overall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;  
+  margin: 0px;
+}
+
+.title-div {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 275px;      
+  height: 400px;
+  padding: 17px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.span-div {
+  padding-block: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.list-div {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.card img {
+  width: 100%;
+}
+
+.button-div {
+  margin-top: auto;
+  width: 100%;
+}
+
+.button-div button {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: brown;
+  color: white;
+}
+
+@media (orientation: portrait) {
+  body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+  }
+
+  nav {
+    background-color: brown;
+    margin: 0px;
+    padding-right: 20px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .nav-point {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+  }
+}
