@@ -1,4 +1,12 @@
-.title-div {
-   .title-div {
-   } 
+.content-container {
+  display: flex;
+  justify-content: center;
+  .main {
+    .pictures {
+      display: flex;
+      img {
+        width: 450px;
+      }
+    }
+  }
 }
