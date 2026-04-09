@@ -1,5 +1,6 @@
 body {
  font-family: 'Inter', sans-serif;
+ margin: 0px;
 
   .title-div {
     position: relative;
@@ -13,6 +14,9 @@ body {
       font-size: 100px;
       letter-spacing:-4%;
       opacity: 75%;
+      h1 {
+        margin: 0px;
+      }
     }
     .keep-moving {
       font-family: "Italianno", cursive;
@@ -21,6 +25,9 @@ body {
       font-size: 128px;
       color: #FF9C08;
       position: absolute;
+      p{
+        margin: 0px;
+      }
     }
   }
 
