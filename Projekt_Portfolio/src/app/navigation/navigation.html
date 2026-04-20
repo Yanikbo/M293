@@ -1,8 +1,21 @@
 
 <div class="nav">
-    <div class="smartphone-button">
-        <button>Menu öffnen!</button>
+    <div class="menu-button-wrapper">
+        <button class="menu-button" (click)="toggleMenu()">
+            <img src="/menu.png" alt="Menu öffnen" class="menu-img">
+        </button>
     </div>
+
+    <!-- Backdrop/Overlay -->
+    @if (isMenuOpen()) {
+        <div class="backdrop" (click)="closeMenu()"></div>
+        <div class="nav-overlay">
+            <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">ÜBER MICH</a>
+            <a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">SKILLS</a>
+            <a routerLink="/galerie" routerLinkActive="active" (click)="closeMenu()">GALERIE</a>
+            <a routerLink="/kontakt" routerLinkActive="active" (click)="closeMenu()">KONTAKT</a>
+        </div>
+    }
 
     <div class="grosse-nav">
         <a routerLink="/about" routerLinkActive="active">ÜBER MICH</a>

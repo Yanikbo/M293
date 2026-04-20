@@ -1,16 +1,109 @@
 .nav {
-    
-    .smartphone-button {
+    position: relative;
+
+    .menu-button-wrapper {
         display: none;
 
         @media (max-width: 700px) {
             display: flex;
+            justify-content: flex-start;
+            margin-left: 10px;
+        }
+
+        @media (min-width: 700px) {
+            display: none;
+        }
+
+        .menu-button {
+            padding: 10px 10px;
+            font-size: 16px;
+            background-color: #E5E5E5;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgb(99, 99, 99);
+
+            &:hover {
+                background-color: #d0d0d0;
+                cursor: pointer;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
         }
     }
 
+    /* Backdrop für blur effect */
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+        z-index: 999;
 
+        @media (max-width: 700px) {
+            display: block;
+        }
+
+        @media (min-width: 700px) {
+            display: none;
+        }
+    }
+
+    /* Overlay Navigation */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        z-index: 1000;
+        gap: 30px;
+
+        @media (max-width: 700px) {
+            display: flex;
+        }
+
+        @media (min-width: 700px) {
+            display: none;
+        }
+
+        a {
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+            padding: 15px 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: #f0f0f0;
+                text-decoration: underline;
+            }
+
+            &.active {
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+
+    /* Original große Navigation - sichtbar ab 700px */
     .grosse-nav {
         display: none;
+
+        @media (max-width: 700px) {
+            display: none;
+        }
 
         @media (min-width: 700px) {
             display: flex;

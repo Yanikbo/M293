@@ -7,4 +7,14 @@ import { Navigation } from "../navigation/navigation";
   templateUrl: './about-me.html',
   styleUrl: './about-me.scss',
 })
-export class AboutMe {}
+
+export class AboutMe {
+  counter: number = 1;
+
+  counterPlus() {
+    this.counter++;
+    if(this.counter > 3) {
+      this.counter = 1;
+    }
+  }
+}
