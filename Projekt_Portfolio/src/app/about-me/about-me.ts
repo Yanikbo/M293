@@ -17,4 +17,11 @@ export class AboutMe {
       this.counter = 1;
     }
   }
+
+  counterminus() {
+    this.counter--;
+    if(this.counter < 1) {
+      this.counter = 3;
+    }
+  }
 }
