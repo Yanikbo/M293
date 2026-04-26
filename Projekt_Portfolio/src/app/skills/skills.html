@@ -7,4 +7,19 @@
       <p>Keep moving</p>
     </div>
   </div>
+  <div class="content">
+    @for (skill of skills; track skill.name) {
+      <div class="skillcard">
+        <div class="skill-info">
+          <div class="image-container">
+            <img src="{{skill.image}}" alt="{{skill.name}}">
+          </div>
+          <span class="skill-name">{{skill.name}}</span>
+          <span class="skill-description">{{skill.description}}</span>
+          <div class="divider"></div>
+          <span class="skill-level">Level: {{skill.level}}</span>
+        </div>
+      </div>
+    }
+  </div>
 </div>
