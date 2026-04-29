@@ -7,4 +7,17 @@
       <p>Keep moving</p>
     </div>
   </div>
+  <div class="content">
+    <div class="galerie">
+      @for(project of projects; track project.name) {
+        <div class="project-card">
+          <div class="formating">
+            <img src="{{project.image}}" alt="{{project.name}}">
+            <span class="project-name">{{project.name}}</span>
+            <span class="project-description">{{project.description}}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
 </div>
