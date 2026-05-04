@@ -1,0 +1,30 @@
+img {
+    /* width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block; */
+}
+
+.bildcontainer {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("gross.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.element1 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
