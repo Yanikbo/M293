@@ -7,4 +7,20 @@
       <p>Keep moving</p>
     </div>
   </div>
+  <div class="content">
+    <div class="contactfield">
+      <span class="title">CONTACT ME</span>
+      <div class="input-container">
+        <input type="text" placeholder="NAME" [(ngModel)]="name">
+        <input type="text" placeholder="EMAIL" [(ngModel)]="email">
+      </div>
+      <textarea placeholder="MESSAGE" class="text-area" [(ngModel)]="input"></textarea>
+      <div class="button-div">
+        <button class="send-button" (click)="sendMessage()">
+          <img src="/senden.png" alt="">
+        </button>
+      </div>
+      <span class="text">Du willst mit mir Kontakt aufnehen? Melde dich unter example@example.ch oder +41 23 456 78 90.</span>
+    </div>
+  </div>
 </div>

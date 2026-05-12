@@ -31,6 +31,8 @@
           align-items: center;
           width: 85%;
           gap: 20px;
+          flex: 1;                    /* ← Nimmt verfügbaren Platz ein */
+          justify-content: space-between;
 
           .project-name {
             font-size: 1.5rem;
@@ -53,6 +55,7 @@
             justify-content: center;
             padding-block: 5px;
             border-radius: 20px;
+            margin-top: auto;
 
             img {
               width: 20px;
