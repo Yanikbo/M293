@@ -10,19 +10,47 @@
   <div class="content">
     <div class="galerie">
       @for(project of projects; track project.name) {
-        <div class="project-card">
+        <div class="project-card" (click)="openPopup(project)">
           <div class="formating">
             <img src="{{project.image}}" alt="{{project.name}}">
             <div>
                 <span class="project-name">{{project.name}}</span>
                 <span class="project-description">{{project.description}}</span>
             </div>
-            <button class="download">
-              <img src="/Downloads.png" alt="">
-            </button>
+            @if (project.file == '') {
+              <div>
+                <button class="enabled" disabled>
+                  <img src="/Downloads.png" alt="">
+                </button>
+                <span class="productionState">STILL IN PRODUCTION</span>
+              </div>
+            } @else {
+              <div>
+                <button class="download" (click)="$event.stopPropagation()">
+                  <img src="/Downloads.png" alt="">
+                </button>
+              </div>
+            }
           </div>
         </div>
       }
     </div>
   </div>
+
+  @if(showPopup && selectedProject) {
+    <div class="popup-overlay" (click)="closePopup()">
+      <div class="popup-container" (click)="$event.stopPropagation()">
+        <div class="popup-header">
+          <h2>{{selectedProject.name}}</h2>
+        </div>
+        <div class="popup-body">
+          <img src="{{selectedProject.image}}" alt="{{selectedProject.name}}">
+          <p>{{selectedProject.detaildescription}}</p>
+        </div>
+        <div class="popup-footer">
+          <button class="close-btn" (click)="closePopup()">Schliessen</button>
+        </div>
+      </div>
+    </div>
+  }
 </div>

@@ -10,11 +10,24 @@ import { Project } from '../classes/project';
 })
 export class Gallerie implements OnInit {
   projects: Project[] = [];
+  selectedProject: Project | null = null;
+  showPopup = false;
+
   constructor(
     private projectService: ProjectServive
   ) {}
 
   ngOnInit(): void {
       this.projects = this.projectService.projects;
+  }
+
+  openPopup(project: Project): void {
+    this.selectedProject = project;
+    this.showPopup = true;
+  }
+
+  closePopup(): void {
+    this.showPopup = false;
+    this.selectedProject = null;
   }
 }
