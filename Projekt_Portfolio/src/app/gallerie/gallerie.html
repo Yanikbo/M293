@@ -10,30 +10,35 @@
   <div class="content">
     <div class="galerie">
       @for(project of projects; track project.name) {
-        <div class="project-card" (click)="openPopup(project)">
-          <div class="formating">
-            <img src="{{project.image}}" alt="{{project.name}}">
-            <div>
-                <span class="project-name">{{project.name}}</span>
-                <span class="project-description">{{project.description}}</span>
-            </div>
-            @if (project.file == '') {
-              <div>
-                <button class="enabled" disabled>
-                  <img src="/Downloads.png" alt="">
-                </button>
-                <span class="productionState">STILL IN PRODUCTION</span>
-              </div>
-            } @else {
-              <div>
-                <button class="download" (click)="$event.stopPropagation()">
-                  <img src="/Downloads.png" alt="">
-                </button>
-              </div>
-            }
+      <div class="project-card">
+        <div class="formating">
+          @if (project.video) {
+            <video [src]="project.video" autoplay loop muted playsinline (click)="openPopup(project)"></video>
+          } @else {
+            <img src="{{project.image}}" alt="{{project.name}}" (click)="openPopup(project)">
+          }
+          <div (click)="openPopup(project)">
+            <span class="project-name">{{project.name}}</span>
+            <span class="project-description">{{project.description}}</span>
           </div>
+
+          @if (project.file == '') {
+            <div>
+              <button class="enabled" disabled>
+                <img src="/Downloads.png" alt="download disabled">
+              </button>
+              <span class="productionState">STILL IN PRODUCTION</span>
+            </div>
+          } @else {
+            <div>
+              <a class="download" [href]="project.file" download (click)="$event.stopPropagation()">
+                <img src="/Downloads.png" alt="download">
+              </a>
+            </div>
+          }
         </div>
-      }
+      </div>
+    }
     </div>
   </div>
 
@@ -44,7 +49,11 @@
           <h2>{{selectedProject.name}}</h2>
         </div>
         <div class="popup-body">
-          <img src="{{selectedProject.image}}" alt="{{selectedProject.name}}">
+          @if (selectedProject.video) {
+            <video [src]="selectedProject.video" autoplay loop muted playsinline controls></video>
+          } @else {
+            <img src="{{selectedProject.image}}" alt="{{selectedProject.name}}">
+          }
           <p>{{selectedProject.detaildescription}}</p>
         </div>
         <div class="popup-footer">

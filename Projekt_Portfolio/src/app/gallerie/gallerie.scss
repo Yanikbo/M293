@@ -32,7 +32,7 @@
           align-items: center;
           width: 85%;
           gap: 20px;
-          flex: 1;                    /* ← Nimmt verfügbaren Platz ein */
+          flex: 1;                   
           justify-content: space-between;
 
           .project-name {
@@ -93,7 +93,7 @@
         .project-description{
           text-align: center;
         }
-        img {
+        img, video {
           width: 100%;
           border-radius: 25px;
         }
@@ -148,7 +148,7 @@
         /* Optional: Etwas Abstand rechts, damit der Scrollbalken nicht am Text klebt */
         padding-right: 10px; 
 
-        img {
+        img, video {
           width: 100%;
           border-radius: 15px;
           max-height: 300px;
