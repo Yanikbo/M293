@@ -25,14 +25,14 @@
           @if (project.file == '') {
             <div>
               <button class="enabled" disabled>
-                <img src="/Downloads.png" alt="download disabled">
+                <img src="Downloads.png" alt="download disabled">
               </button>
               <span class="productionState">STILL IN PRODUCTION</span>
             </div>
           } @else {
             <div>
               <a class="download" [href]="project.file" download (click)="$event.stopPropagation()">
-                <img src="/Downloads.png" alt="download">
+                <img src="Downloads.png" alt="download">
               </a>
             </div>
           }
